@@ -1,0 +1,134 @@
+.navbar{
+	position: absolute;
+	width: 100%;
+	z-index: $zindex-navbar;
+	transition: 0.4s all ease;
+
+	&-container{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		padding: 0 20px;
+		position: relative;
+		width: 100%;
+	}
+
+	&-brand{
+		align-items: center;
+		display: flex;
+		height: inherit;
+		justify-content: space-between;
+		padding: 20px 0;
+		width: 100%;
+
+		&-bars{
+			align-items: center;
+			background: none;
+			border: none;
+			cursor: pointer;
+			display: flex;
+		}
+
+		a{
+			color: white;
+			cursor: pointer;
+			font-size: 1.5em;
+			font-weight: bold;
+
+
+		}
+	}
+
+	&-nav{
+		display: none;
+	}
+
+	.nav-link{
+		cursor: pointer;	
+		user-select: none;
+		text-decoration: none;
+		color: $black;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+//Navbar active
+.navbar.active{
+	background: rgba(0,0,0,.4);
+	height:100vh;
+	position: fixed;
+
+
+	.navbar-nav{
+		align-items: center;
+		background: white;	
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.nav-link{
+		font-weight: 500;
+		padding: 25px 20px;
+		text-align: left;
+		user-select: none;
+		width: 100%;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop){
+
+	.navbar{
+		position: absolute;
+		width: 100%;
+		z-index: var(--zindex-nav-menu); //cambiar
+
+		&-container{
+			display: flex;
+			flex-direction: row;
+			max-width: 1200px;
+			position: relative;
+		}
+
+		&-brand{		
+
+			&-bars{
+				display: none;
+			}
+
+			a{
+				color: white;
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+		}
+
+		&-nav{
+			display: flex;
+		}
+
+		.nav-link{
+			color: #eeeeee;
+			font-weight: 500;
+			margin-right: 20px;
+			white-space: nowrap;
+			&:last-child{
+				margin: 0;
+			}
+
+			&:hover{
+				color: white;
+			}
+		}
+	}
+
+
+
+}

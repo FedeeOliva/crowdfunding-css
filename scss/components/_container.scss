@@ -1,0 +1,20 @@
+.container{
+	padding: 0 20px;
+	margin: auto;
+	max-width: 730px;
+}
+
+.section{
+	border-radius: 10px;
+	background: white;
+	padding: 40px 30px;
+	position: relative;
+	border: 1px solid #e1e1e1;
+	margin-bottom: 20px;
+}
+
+@media screen and (min-width: $desktop) {
+	.section{
+		padding: 40px;
+	}
+}

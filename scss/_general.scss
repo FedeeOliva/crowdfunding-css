@@ -1,0 +1,48 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Commissioner', sans-serif;
+	background: #eee;
+	position: relative;
+	font-size: 1rem;
+}
+
+p{
+	color: $dark-gray;
+	line-height: 1.6;
+	margin: 20px 0;
+	font-size: 0.85em;
+}
+
+main{
+	position: relative;
+	top: -50px;
+}
+
+
+.header{
+	background-image: url('../images/image-hero-mobile.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 300px;
+	width: 100%;
+}
+
+@media screen and (min-width: $desktop){
+	.header{
+		background-image: url('../images/image-hero-desktop.jpg');
+		min-height: 500px;
+		background-size: contain;
+
+	}
+
+	main{
+		top: -200px;
+	}
+
+	
+}
