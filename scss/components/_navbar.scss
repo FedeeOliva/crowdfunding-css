@@ -89,11 +89,12 @@
 		position: absolute;
 		width: 100%;
 		z-index: var(--zindex-nav-menu); //cambiar
-
+		font-size: 0.9rem;
 		&-container{
 			display: flex;
 			flex-direction: row;
-			max-width: 1200px;
+			padding-top: 25px;
+			max-width: 1150px;
 			position: relative;
 		}
 

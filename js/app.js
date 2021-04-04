@@ -44,16 +44,74 @@
 }
 
 
-//modal
+//modal productos
+const modal = document.getElementById('modal-products');
+const modalPayment = document.getElementById('modal-payment-finished');
 {
-	const modal = document.getElementById('modal');
-
-
+	
 	modal.addEventListener('click', e => {
 		if(e.target === modal){
 			modal.classList.toggle('active');
 		}
 		
 	})
+
+	const radioButtons = modal.querySelectorAll('input[type="radio"]');
+	const cardProducts = modal.querySelectorAll('.card-product-selectable');
+	const btnSelects = document.querySelectorAll('main .btn-select-reward');
+	const btnBackThisProject = document.getElementById('back-this-project');
+	const btnsPayment = document.querySelectorAll('#modal-products .btn-cyan')
+	const btnCloseModal = document.getElementById('btn-close-modal');
+	const btnPaymentModal = document.querySelector('#modal-payment-finished .btn')
+
+	const selectProduct = id =>{
+		const card = document.getElementById(id);
+		cardProducts.forEach(cardProduct => {
+			cardProduct.classList.remove('selected');
+		})
+		card.classList.add('selected');
+		card.querySelector('input[type="radio"]').checked = true;		
+		card.scrollIntoView({
+			behavior: "smooth"
+		})
+	}
+
+	btnBackThisProject.addEventListener('click', () =>{
+		modal.classList.add('active');
+	})
+
+	radioButtons.forEach( radioButton => {
+		radioButton.addEventListener('change', e =>{
+			const id = e.target.getAttribute('data-targetid');
+			selectProduct(id);
+		})
+	})
+
+	btnSelects.forEach( btn => {
+		btn.addEventListener('click', e =>{
+			modal.classList.add('active');
+			const id = e.target.getAttribute('data-targetid');
+			selectProduct(id);
+
+		})
+	})
+
+	btnsPayment.forEach( btn => {
+		btn.addEventListener('click', e =>{
+			modal.classList.remove('active')			
+			modalPayment.classList.add('active');
+
+			setTimeout(() => modalPayment.classList.remove('active') ,5000)
+		})
+	})
+
+	btnCloseModal.addEventListener('click', () => {
+		modal.classList.remove('active');
+	});
+
+	btnPaymentModal.addEventListener('click', () => {
+		modalPayment.classList.remove('active');
+	})
+
 
 }

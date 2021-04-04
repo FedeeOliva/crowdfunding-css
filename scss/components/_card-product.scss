@@ -12,6 +12,7 @@
 	&-price{
 		color: $moderate-cyan;
 		font-size: 0.9em;
+		font-weight: bold;
 	}
 
 	.btn{
@@ -34,6 +35,84 @@
 	&.disable{
 		opacity: 0.4;
 	}
+}
+
+
+.card-product-selectable{
+	@extend .card-product;
+
+	&-radio{
+		display: flex;
+
+		label{			
+			&:hover{
+				cursor: pointer;
+				color: $moderate-cyan;
+			}
+			
+			
+		}
+
+		input[type="radio"]{
+			margin-right: 15px;		
+
+		}
+	}
+
+	.card-product-buy{
+		display: none;
+	}
+}
+
+.card-product-selectable.selected{
+	border: 2px solid $moderate-cyan;
+
+	.card-product-buy{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-top: 1px solid #eee;
+		padding-top: 20px;
+
+
+		span{
+			color: $dark-gray;
+			font-size: 0.8em;
+		}
+		div{
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			position: relative;
+			input{
+				border-radius: 20px;
+				border: 1px solid #eee ;
+				width: 80px;
+				padding-left: 20px;
+				font-size: 0.9em;
+				font-weight: bold;
+				-webkit-appearance: textfield;
+
+				&:after{
+					content: "$";
+				}				
+			}
+
+			label{
+				position: absolute;
+				top: 50%;
+				left: 10px;
+				transform: translateY(-60%);
+				color: #888;
+			}
+
+			button{
+				margin: 0;
+			}
+		}
+	}
+
 }
 
 
@@ -73,6 +152,63 @@
 
 		&-info{
 			grid-column: 1/-1
+		}
+	}
+
+
+	.card-product-selectable{
+
+		position: relative;
+		&-radio{
+			order: -1;
+			label{
+				white-space: nowrap;
+				display: flex;
+				padding-left: 30px;
+				align-items: center;
+				h5{
+					margin: 0;
+					margin-right:10px;
+				}
+				span{
+					font-weight: bold;
+				}
+			}
+			input{
+				position: absolute;
+			}
+		}
+		& > .card-product-info{
+			padding-left: 30px;
+		}
+
+		& > .card-product-stock{
+			order: -1;
+			display: flex;
+			justify-content: flex-end;
+			font-size: 0.7em;
+			line-height: 0;
+		}
+	}
+
+
+	.card-product-selectable.selected{
+		border: 2px solid $moderate-cyan;
+
+		.card-product-buy{
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			grid-column: 1/-1;
+			align-items: baseline;
+			padding: 0;
+			div{
+				width: initial;
+
+				input{
+					margin-right: 15px;
+				}
+			}
 		}
 	}
 }

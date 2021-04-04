@@ -49,7 +49,7 @@
         <p class="presentation-subtitle">A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
 
         <div class="presentation-buttons">
-          <button class="btn btn-cyan">Back this project</button>
+          <button class="btn btn-cyan" id="back-this-project">Back this project</button>
           <button class="btn btn-bookmark" id='btn-bookmark'>
             <img src="./images/icon-bookmark.svg" alt="">
             <span>Bookmark</span>
@@ -99,7 +99,7 @@
               <strong>101</strong>
               <span>left</span>
             </div>
-              <button class="btn btn-cyan">
+              <button class="btn btn-cyan btn-select-reward" data-targetid="bamboo-stand">
                 Select Reward
               </button>
           </article>
@@ -116,7 +116,7 @@
               <strong>64</strong>
               <span>left</span>
             </div>
-              <button class="btn btn-cyan">
+              <button class="btn btn-cyan btn-select-reward" data-targetid="black-edition">
                 Select Reward
               </button>
           </article>
@@ -146,18 +146,22 @@
 
   </main>  
 
-  <div class="modal active" id="modal">
+  <div class="modal" id="modal-products">
     <div class="section modal-content">
+      <button id="btn-close-modal" class="modal-close">&times;</button>
+      <form>
       <h4> Back this project</h4>
           <p>
              Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-          </p>
-          
+          </p>     
 
-          <article class="section card-product">
-            <h5 class="card-product-title">Pledge with no reward</h5>
-            <span class="card-product-price"></span>
-
+          <fieldset class="section card-product-selectable" id="withnorward">
+            <div class="card-product-selectable-radio">
+                    <input type="radio" name="product" id="withnorward-radio" data-targetid="withnorward" value="0"/>
+                    <label for="withnorward-radio">
+                       <h5 class="card-product-title">Pledge with no reward</h5>
+                    <label>
+               </div>
             <p class="card-product-info">
                  Choose to support us without a reward if you simply believe in our project. As a backer, 
                  you will be signed up to receive product updates via email.
@@ -166,12 +170,27 @@
               <strong></strong>
               <span></span>
             </div>
-          </article>
 
-          <article class="section card-product">
-            <h5 class="card-product-title">Bamboo Stand</h5>
-            <span class="card-product-price">Pledge $25 or more</span>
+            <div class="card-product-buy">
+               <span>Enter your pledge</span>
+               <div>
+                  <label>$</label>
+                  <input type="number">
+                  <button class="btn btn-cyan">
+                     Continue
+                  </button>
+               </div>
+            </div>
+          </fieldset>
 
+          <fieldset class="section card-product-selectable" id="bamboo-stand">
+               <div class="card-product-selectable-radio">
+                    <input type="radio" name="product" id="bamboo-stand-radio" data-targetid="bamboo-stand" />
+                    <label for="bamboo-stand-radio">
+                       <h5 class="card-product-title">Bamboo Stand</h5>
+                       <span class="card-product-price">Pledge $25 or more</span>
+                    <label>
+               </div>
             <p class="card-product-info">
               You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
               you’ll be added to a special Backer member list.
@@ -180,12 +199,27 @@
               <strong>101</strong>
               <span>left</span>
             </div>
-          </article>
 
-           <article class="section card-product">
-            <h5 class="card-product-title">Black Edition Stand</h5>
-            <span class="card-product-price">Pledge $75 or more</span>
+             <div class="card-product-buy">
+               <span>Enter your pledge</span>
+               <div>
+                  <label>$</label>
+                  <input type="number">
+                  <button class="btn btn-cyan">
+                     Continue
+                  </button>
+               </div>
+            </div>
+          </fieldset>
 
+           <fieldset class="section card-product-selectable" id="black-edition">
+               <div class="card-product-selectable-radio">
+                    <input type="radio" name="product" id="black-edition-radio" data-targetid="black-edition"/>
+                    <label for="black-edition-radio">
+                       <h5 class="card-product-title">Black Edition Stand</h5>
+                       <span class="card-product-price">Pledge $75 or more</span>
+                    <label>
+               </div>
             <p class="card-product-info">
                You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
                  member list. Shipping is included.
@@ -194,12 +228,28 @@
               <strong>64</strong>
               <span>left</span>
             </div>
-          </article>
 
-           <article class="section card-product disable">
-            <h5 class="card-product-title">Mahogany Special Edition</h5>
-            <span class="card-product-price"> Pledge $200 or more</span>
+             <div class="card-product-buy">
+               <span>Enter your pledge</span>
+               <div>
+                  <label>$</label>
+                  <input type="number">
+                  <button class="btn btn-cyan">
+                     Continue
+                  </button>
+               </div>
+            </div>
+          </fieldset>
 
+
+           <fieldset class="section card-product-selectable disable">
+             <div class="card-product-selectable-radio">
+                    <input type="radio" name="product" id="mohogany-especial" disabled />
+                    <label for="mohogany-especial"">
+                       <h5 class="card-product-title">Mahogany Special Edition</h5>
+                       <span class="card-product-price">Pledge $200 or more</span>
+                    <label>
+               </div>
             <p class="card-product-info"> 
              You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
       to our Backer member list. Shipping is included.
@@ -208,22 +258,36 @@
               <strong>0</strong>
               <span>left</span>
             </div>
-          </article>     
 
+             <div class="card-product-buy">
+               <span>Enter your pledge</span>
+               <div>
+                  <label>$</label>
+                  <input type="number">
+                  <button class="btn btn-cyan">
+                     Continue
+                  </button>
+               </div>
+            </div>
+          </fieldset>     
+        </form> 
     </div> 
     </div>          
   </div>
-  <!-- Selection modal start -->
-
-      <!--div class="modal-success">
-        <img src="./images/icon-check.svg" />
-        <h3>Thanks for your support!</h3>
-        <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-        an email once our campaign is completed.</p>
-        <button class="btn btn-cyan">
-          Got it!        
-        </button>
-      </div-->
+  <!--   Modal Finalizar pago -->
+  <div class="modal" id="modal-payment-finished">
+      <div class="section modal-content">
+         <div class="modal-success">
+           <img src="./images/icon-check.svg" />
+           <h3>Thanks for your support!</h3>
+           <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+           an email once our campaign is completed.</p>
+           <button class="btn btn-cyan">
+             Got it!        
+           </button>
+         </div>
+      </div>
+   </div>
 <script src="js/app.js"></script>  
 
 </body>

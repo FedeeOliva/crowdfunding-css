@@ -35,13 +35,12 @@ main{
 @media screen and (min-width: $desktop){
 	.header{
 		background-image: url('../images/image-hero-desktop.jpg');
-		min-height: 500px;
-		background-size: contain;
-
+		background-size: cover;	
+		min-height: 400px;
 	}
 
 	main{
-		top: -200px;
+		top: -80px;
 	}
 
 	
